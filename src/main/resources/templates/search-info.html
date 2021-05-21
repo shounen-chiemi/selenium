@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+	<div th:replace="home::head"></div>
+</head>
+<body>
+<div class="containers">
+	<div class="headers">
+		<div class="header-image">
+			<img class="img-thue" src="image/Thue.PNG"/>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a th:href="index">Trang chủ</a></li>
+				<li><a th:href="search-calculator" id="search">Tra cứu</a></li>
+				<li><a th:href="new">Tin tức</a></li>
+				<li><a th:href="question">Hỏi đáp</a></li>
+				<li><a th:href="contact">Liên hệ</a></li>
+				<li><a href="#"  data-toggle="modal" data-target="#myModal" type="button">Đăng Nhập</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contents">
+		<div class="search-info">
+			<div class="menu-1">
+				<ul>
+					<li><a th:href="search-calculator">Tính thuế thu nhập cá nhân</a></li>
+					<li><a th:href="search-info" id="taxpayer-info">Thông tin về người nộp thuế</a></li>
+				</ul>
+			</div>
+			<div class="menu-1-content">
+				<div class="main-app">
+					<form method="post">
+						<table>
+							<tr>
+								<td colspan="2">Họ và Tên</td>
+								<td colspan="2"><input type="text" id="income" name="fullName"/></td>
+							</tr>
+							<tr>
+								<td colspan="2">Số chứng minh thư/Thẻ căn cước</td>
+								<td colspan="2"><input type="text" id="income1" name="CMTND"/></td>
+							</tr>
+							<tr>
+								<td colspan="2">Địa chỉ</td>
+								<td colspan="2"><textarea type="textArae" id="income3" name="address"/></td>
+							</tr>
+							<tr>
+								<td colspan="2">Mã xác nhận</td>
+								<td colspan="1"><input type="text" id="income2" name="code"/></td>
+								<td colspan="1"><img src="image/code.PNG"/></td>
+							</tr>
+
+							<tr>
+								<td colspan="2"><strong>Mã Số Thuế</strong></td>
+								<td colspan="2"><p id="taxMoney"></p></td>
+							</tr>
+							<tr>
+								<td colspan="2"></td>
+								<td colspan="2"><button onclick="taxCall()" type="button">Tra cứu</button></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="home::div#myModal"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+body{
+	padding: 0;
+	margin: 0 auto;
+	background-color: #E6E6E6;
+	font-family: sans-serif;
+}
+.containers {
+	margin-left: 18%;
+	max-width: 64.5%;
+	padding-top: 10px;
+	display: block;
+}
+.menu{
+	width: 100% !important;
+}
+
+.menu, .menu ul {
+	color: white;
+	height: 30px;
+	background-color: #B40404; 
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+.menu li {
+  color: #f1f1f1;
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: -5px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+.menu a:hover {
+	text-decoration: none;
+  background: #F1F1F1;
+  color: #333;
+}
+
+.img-thue {
+	max-width: 100%;
+	min-width: 100%;
+	height: auto;
+	display: block;
+}
+.headers, .contents{
+	display: block;
+	max-width: 100%;
+}
+
+#page-index{
+	background: #F1F1F1 !important;
+  	color: #333 !important;
+}
+#search{
+	background: #F1F1F1 !important;
+  	color: #333 !important;
+}
+#new{
+	background: #F1F1F1 !important;
+  	color: #333 !important;
+}
+#contact{
+	background: #F1F1F1 !important;
+  	color: #333 !important;
+}
+#question{
+	background: #F1F1F1 !important;
+  	color: #333 !important;
+}
+#login{
+	background: #F1F1F1 !important;
+  	color: #333 !important;
+}
+
+/*menu con tra cuu thong tin*/
+
+.search-info{
+	display: block;
+	padding: 25px 50px 20px 50px;
+	background-color: white;
+	max-width: 100%;
+	height: auto;
+	border: solid 1px #A4A4A4;
+	border-top: solid 1px #E6E6E6;
+}
+
+.menu-1-content{
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
+	border: solid 1px #A4A4A4;
+}
+
+.menu-1, .menu-1 ul {
+	color: black;
+	height: auto;
+	background-color: white; 
+}
+
+.menu-1 ul {
+	margin: 0;
+	padding: 0;
+	height: auto;
+	list-style-type: none;
+	text-align: left;
+}
+.menu-1 li {
+  color: black;
+  display: inline-block;
+  /*width: auto;*/
+  /*height: 30px;*/
+  /*line-height: 30px;*/
+  /*margin-left: -5px;*/
+}
+
+.menu-1 a {
+font-weight: 600;
+font-size: 13px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  border: solid 1px #A4A4A4;
+  padding: 8px 12px;
+}
+.menu-1 a:hover {
+  color: #6E6E6E;
+  background-color: white; /* For browsers that do not support gradients */
+  background-image: linear-gradient(white, #A4A4A4);
+}
+
+#tax-calculator{
+	color: #6E6E6E;
+  	background-color: white; /* For browsers that do not support gradients */
+  	background-image: linear-gradient(white, #A4A4A4);
+}
+#taxpayer-info{
+	color: #6E6E6E;
+  	background-color: white; /* For browsers that do not support gradients */
+  	background-image: linear-gradient(white, #A4A4A4);
+}
+
+.main-app{
+	padding: 20px 10%;
+}

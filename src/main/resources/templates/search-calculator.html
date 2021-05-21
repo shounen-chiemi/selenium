@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+	<div th:replace="home::head"></div>
+</head>
+<body>
+<div class="containers">
+	<div class="headers">
+		<div class="header-image">
+			<img class="img-thue" src="image/Thue.PNG"/>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a th:href="index">Trang chủ</a></li>
+				<li><a th:href="search-calculator" id="search">Tra cứu</a></li>
+				<li><a th:href="new">Tin tức</a></li>
+				<li><a th:href="question">Hỏi đáp</a></li>
+				<li><a th:href="contact">Liên hệ</a></li>
+				<li><a href="#"  data-toggle="modal" data-target="#myModal" type="button">Đăng Nhập</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contents">
+		<div class="search-info">
+			<div class="menu-1">
+				<ul>
+					<li><a th:href="search-calculator" id="tax-calculator">Tính thuế thu nhập cá nhân</a></li>
+					<li><a th:href="search-info">Thông tin về người nộp thuế</a></li>
+				</ul>
+			</div>
+			<div class="menu-1-content">
+				<div class="main-app">
+					<form method="post">
+						<table>
+							<tr>
+								<td>Họ và tên</td>
+								<td><input type = 'text' placeholder="Nguyễn Văn A" id="name"/> </td>
+								<td>CMND số</td>
+								<td><input type = 'text' placeholder="012345678" id="personalID"/></td>
+							</tr>
+							<tr>
+								<td>Địa chỉ</td>
+								<td><textarea cols="20" rows="4"></textarea></td>
+								<td>Ngày cấp</td>
+								<td><input type="date" id="dayissueID"/></td>
+							</tr>
+							<tr>
+								<td colspan="2">Tiền lương tháng</td>
+								<td colspan="2"><input type="number" id="income" name="income"/></td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>A. Khoản giảm trừ</strong></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td colspan="2">Giảm trừ cố định của người nộp thuế</td>
+								<td colspan="2"><input type="text" placeholder="9000000" value="9000000" id="reduceFix"/></td>
+							</tr>
+							<tr>
+								<td colspan="2">Số người phụ thuộc</td>
+								<td colspan="2">
+									<select id="personDepend">
+										<option>0</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+									</select>
+									<span>x 3.600.000 / người</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4">Giảm trừ các khoản đóng BHXH, BHYT, BHTN</td>
+							</tr>
+							<tr>
+								<td colspan="2">Bảo hiểm xã hội</td>
+								<td colspan="2"><input type="text" value="8" id="societyIns"/><span>%</span></td>
+							</tr>
+							<tr>
+								<td colspan="2">Bảo hiểm y tế</td>
+								<td colspan="2"><input type="text" value="1.5" id="healthIns"/><span>%</span></td>
+							</tr>
+							<tr>
+								<td colspan="2">Bảo hiểm thất nghiệp</td>
+								<td colspan="2"><input type="text" value="1" id="joblessIns"/><span>%</span></td>
+							</tr>
+							<tr>
+								<td colspan="2">Giảm trừ quỹ hưu trí</td>
+								<td colspan="2"><input type="text" id="retireFund"/><span>VND</span></td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>B. Thu nhập tính thuế</strong></td>
+								<td colspan="2"><p id="taxMoney"></p></td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>C. Thuế thu nhập</strong></td>
+								<td colspan="2"><p id="tax"></p></td>
+							</tr>
+							<tr>
+								<td colspan="2"></td>
+								<td colspan="2"><button onclick="taxCal()" type="button">Tính thuế thu nhập</button></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="home::div#myModal"></div>
+</div>
+</body>
+</html>

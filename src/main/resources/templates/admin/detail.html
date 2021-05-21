@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi" xml:lang="vi">
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/test1.css}"/>
+</head>
+<body>
+
+<div class="main-content">
+  <div>
+    <!-- Table -->
+
+    <div class="row">
+      <div class="col-xl-8 m-auto order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Chi tiết báo cáo thuế</h3>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <h6 class="heading-small text-muted mb-4">Thông tin tài khoản</h6>
+            <div class="pl-lg-4">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group focused">
+                    <label class="form-control-label" >Chứng minh nhân dân</label>
+                    <input class="form-control form-control-alternative" type="text" th:value="${baocaothuechitiet.getNguoidongthue().getCmnd()}" disabled>
+                  </div>
+                </div>
+              </div>
+
+              <form action="update_Thongtin" method="post">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group focused">
+                      <label class="form-control-label">Họ tên</label>
+                      <input class="form-control form-control-alternative" th:value="${baocaothuechitiet.getNguoidongthue().getTen()}" type="text" disabled>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group focused">
+                      <label class="form-control-label">Email</label>
+                      <input class="form-control form-control-alternative" type="text" th:value="${baocaothuechitiet.getNguoidongthue().getEmail()}" disabled>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group focused">
+                      <label class="form-control-label">Địa chỉ</label>
+                      <input class="form-control form-control-alternative" type="text" th:value="${baocaothuechitiet.getDiachi()}" disabled>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <hr class="my-4">
+            <!-- Address -->
+          </div>
+
+          <div class="card-body">
+
+            <h6 class="heading-small text-muted mb-4">Chi tiết thuế</h6>
+            <div class="pl-lg-4">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group focused">
+                    <label class="form-control-label">Mã số thuế</label>
+                    <input class="form-control form-control-alternative" type="text" th:value="${baocaothuechitiet.getId()}" disabled>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group focused">
+                    <label class="form-control-label">Loại thuế TNCN</label>
+                    <input class="form-control form-control-alternative" th:value="${baocaothuechitiet.getChitietthuesuat().getTenmuc()}" type="text" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group focused">
+                    <label class="form-control-label">Thu nhập chịu thuế (VNĐ)</label>
+                    <input class="form-control form-control-alternative" th:value="${baocaothuechitiet.getTNCT()}" type="text" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group focused">
+                    <label class="form-control-label">Thuế suất (%)</label>
+                    <input class="form-control form-control-alternative" th:value="${baocaothuechitiet.getChitietthuesuat().getThuesuat()}" type="text" disabled>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <hr class="my-4">
+            <!-- Address -->
+          </div>
+          <div class="card-body">
+            <h6 class="heading-small text-muted mb-4">Chi tiết khoản đã giảm trừ</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12" th:each="k : ${baocaothuechitiet.getList_khoangiamtru()}">
+                  <div class="form-group focused">
+                    <label class="form-control-label">Tên mức giảm trừ </label>
+                    <input class="form-control form-control-alternative" type="text" th:value="${k.getTenmucgiamtru()}" disabled>
+                  </div>
+                  <div class="form-group focused">
+                    <label class="form-control-label">Khoản giảm trừ (VNĐ)</label>
+                    <input class="form-control form-control-alternative" type="text" th:value="${k.getMucgiamtru()}" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group focused">
+                    <label class="form-control-label">Tổng số tiền thuế phải nộp</label>
+                    <input class="form-control form-control-alternative" type="text" th:value="${baocaothuechitiet.getTongtien()}" disabled>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+
+              <h6 class="heading-small text-muted mb-4">ĐÃ THANH TOÁN</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group focused">
+                      <label class="form-control-label">Tổng số tiền thuế phải nộp (VNĐ)</label>
+                      <input class="form-control form-control-alternative" type="text" th:value="${baocaothuechitiet.getTongtien()}" disabled>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4">
+              <!-- Address -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="row align-items-center justify-content-xl-between">
+    <div class="col-xl-6 m-auto text-center">
+      <div class="copyright">
+        <p>chi tiết báo cáo thuế</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+<script src="JS/main.js"></script>
+<script type="text/javascript">
+  function show()
+  {
+    document.getElementById("mk").style.display = "flex";
+  }
+
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+	<div th:replace="home::head"></div>
+</head>
+<body>
+<div class="containers">
+	<div class="headers">
+		<div class="header-image">
+			<img class="img-thue" src="image/Thue.PNG"/>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a th:href="index">Trang chủ</a></li>
+				<li><a th:href="search-calculator">Tra cứu</a></li>
+				<li><a th:href="new">Tin tức</a></li>
+				<li><a th:href="question">Hỏi đáp</a></li>
+				<li><a th:href="contact" id="contact">Liên hệ</a></li>
+				<li><a href="#"  data-toggle="modal" data-target="#myModal" type="button">Đăng Nhập</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contents">
+		<div class="header-image">
+			<img class="img-thue" src="image/contact1.PNG"/>
+		</div>
+		<div class="header-image">
+			<img class="img-thue" src="image/trangchu2.PNG"/>
+		</div>
+	</div>
+	<div th:replace="home::div#myModal"></div>
+</div>
+</body>
+</html>

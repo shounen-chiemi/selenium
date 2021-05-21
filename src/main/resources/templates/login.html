@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>JSP Page</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+  <div>Đăng nhập<span><span> </span></span></div>
+</div>
+<br>
+<div class="login">
+  <form id="form1" action="/Login" method="post">
+    <input type="text" placeholder="tài khoản" name="txtU"><br>
+    <input type="password" placeholder="mật khẩu" name="txtP"><br>
+    <input type="button" value="Đăng nhập" onclick="this.parentElement.submit()">
+  </form>
+</div>
+</body>
+</html>

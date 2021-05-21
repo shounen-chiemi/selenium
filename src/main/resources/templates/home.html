@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <title>Hai do</title>
+    <meta />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+<div class="containers">
+    <div class="headers">
+        <div class="header-image">
+            <img class="img-thue" src="image/Thue.PNG"/>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a th:href="index" id="page-index">Trang chủ</a></li>
+                <li><a th:href="search-calculator">Tra cứu</a></li>
+                <li><a th:href="new">Tin tức</a></li>
+                <li><a th:href="question">Hỏi đáp</a></li>
+                <li><a th:href="contact">Liên hệ</a></li>
+                <li><a href="#"  data-toggle="modal" data-target="#myModal" type="button">Đăng Nhập</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Đăng Nhập</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form th:action="@{/loginuser}" method="post" class="was-validated">
+                        <div class="form-group">
+                            <label for="uname">Tài khoản:</label>
+                            <input type="text" class="form-control" id="uname" placeholder="Nhập tài khoản" name="txtU" required = 'required'/>
+                            <div class="valid-feedback">Valid.</div>
+                            <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Mật khẩu:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu" name="txtP" required = 'required'/>
+                            <div class="valid-feedback">Valid.</div>
+                            <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+                        </div>
+<!--                        <div class="form-group form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                                <input class="form-check-input" type="checkbox" name="remember" required = 'required'/> Đồng ý với điều khoản sử dụng.-->
+<!--                                <div class="valid-feedback">Valid.</div>-->
+<!--                                &lt;!&ndash; <div class="invalid-feedback">Check this checkbox to continue.</div> &ndash;&gt;-->
+<!--                            </label>-->
+<!--                        </div>-->
+                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
